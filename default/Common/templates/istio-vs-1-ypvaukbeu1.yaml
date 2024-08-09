@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: istio-vs-1-ypvaukbeu1
+  namespace: {{ .Values.namespace }}
+  {{- if index .Values.istio.virtualservice.nrn 0 }}
+  annotations:
+    nservice.beta.kubernetes.io/ncloud-load-balancer-ssl-certificate-no: '{{ index .Values.istio.virtualservice.nrn 0 }}'
+  {{- end }}
+spec:
+  hosts:
+  {{- if .Values.istio.gateway.host }}
+  - {{ .Values.istio.gateway.host }}
+  {{- else }}
+  - "*"
+  {{- end }}
+  gateways:
+  - {{ .Values.istio.gateway.name }}
+  http:
+  - match:
+    - uri:
+        prefix: /{{ .Values.namespace }}/api/
+    rewrite:
+      uri: /
+    route: 
+    - destination:
+        host: backend-service-1-r5usdouo5y
+    timeout: 0s

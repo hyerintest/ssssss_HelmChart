@@ -1,0 +1,16 @@
+namespace: -@namespace@-
+secret:
+  name: []
+  registry:
+    name: regsecret
+    url: -@imageRepoName@-
+    username: -@accessKey@-
+    password: -@secretKey@-
+    email: info@twolinecode.com
+istio:
+  gateway:
+    name: istio-gateway-1-a65w0avwwj
+    host: -@host@-
+  virtualservice:
+    host: 
+    nrn: [null]
