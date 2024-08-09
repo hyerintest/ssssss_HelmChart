@@ -1,16 +1,16 @@
-namespace: -@namespace@-
+namespace: ssssss-dev
 secret:
   name: []
   registry:
     name: regsecret
-    url: -@imageRepoName@-
-    username: -@accessKey@-
-    password: -@secretKey@-
+    url: turaco-dev-registry.turacocloud.com/dev-turaco-workspace-268/turaco
+    username: robot$turaco_common
+    password: Zv7beYWhgCQSOUoxZQK1RGWHdvAMltXx
     email: info@twolinecode.com
 istio:
   gateway:
     name: istio-gateway-1-a65w0avwwj
-    host: -@host@-
+    host: 
   virtualservice:
     host: 
     nrn: [null]
