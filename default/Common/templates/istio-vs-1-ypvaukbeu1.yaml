@@ -25,4 +25,4 @@ spec:
     route: 
     - destination:
         host: backend-service-1-r5usdouo5y
-    timeout: 0s
+    timeout: 100s
